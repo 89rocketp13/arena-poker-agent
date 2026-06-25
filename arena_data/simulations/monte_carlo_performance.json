@@ -1,0 +1,1410 @@
+{
+  "results": [
+    {
+      "scenario": {
+        "name": "random_flop_single_raised_pot",
+        "description": "Random flop, medium stack, single opponent, facing a small bet.",
+        "board_cards": 3,
+        "pot": 1200,
+        "to_call": 300,
+        "hero_stack": 9000,
+        "min_raise": 600,
+        "big_blind": 200,
+        "position": "button",
+        "opponent_kind": "unknown",
+        "hero_filter": "any"
+      },
+      "trials": 120,
+      "engine_equity_simulations_per_decision": 120,
+      "seed": 20260625,
+      "action_frequencies": {
+        "all_in": 52,
+        "raise": 65,
+        "fold": 3
+      },
+      "average_estimated_best_ev": 1599.0312,
+      "average_estimated_equity": 0.4758,
+      "average_realized_chip_delta": 960,
+      "positive_realized_rate": 0.5667,
+      "negative_realized_rate": 0.4083,
+      "neutral_realized_rate": 0.025,
+      "sample_decisions": [
+        {
+          "hero_cards": [
+            "Ac",
+            "Qs"
+          ],
+          "board": [
+            "5s",
+            "6h",
+            "5h"
+          ],
+          "action": "all_in",
+          "amount": 9000,
+          "equity": 0.5375,
+          "estimated_best_ev": 1290.0,
+          "realized_chip_delta": 10200,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 9000,
+              "ev": 1290.0
+            },
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": 834.38
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": 667.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Kh",
+            "9d"
+          ],
+          "board": [
+            "2c",
+            "7c",
+            "7h"
+          ],
+          "action": "all_in",
+          "amount": 9000,
+          "equity": 0.5625,
+          "estimated_best_ev": 1650.0,
+          "realized_chip_delta": -9000,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 9000,
+              "ev": 1650.0
+            },
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": 890.62
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": 712.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "9c",
+            "6d"
+          ],
+          "board": [
+            "7s",
+            "7c",
+            "Th"
+          ],
+          "action": "raise",
+          "amount": 900,
+          "equity": 0.3667,
+          "estimated_best_ev": 450.0,
+          "realized_chip_delta": -900,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": 450.0
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": 360.0
+            },
+            {
+              "action": "fold",
+              "amount": 0,
+              "ev": 0.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "4s",
+            "Ad"
+          ],
+          "board": [
+            "7c",
+            "2d",
+            "2h"
+          ],
+          "action": "all_in",
+          "amount": 9000,
+          "equity": 0.5792,
+          "estimated_best_ev": 1890.0,
+          "realized_chip_delta": 600,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 9000,
+              "ev": 1890.0
+            },
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": 928.12
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": 742.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ac",
+            "6s"
+          ],
+          "board": [
+            "Kh",
+            "4h",
+            "4s"
+          ],
+          "action": "all_in",
+          "amount": 9000,
+          "equity": 0.5458,
+          "estimated_best_ev": 1410.0,
+          "realized_chip_delta": 10200,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 9000,
+              "ev": 1410.0
+            },
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": 853.12
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": 682.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "9d",
+            "Jd"
+          ],
+          "board": [
+            "Jc",
+            "5d",
+            "Kd"
+          ],
+          "action": "all_in",
+          "amount": 9000,
+          "equity": 0.85,
+          "estimated_best_ev": 5790.0,
+          "realized_chip_delta": 1200,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 9000,
+              "ev": 5790.0
+            },
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": 1537.5
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": 1230.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "3c",
+            "6c"
+          ],
+          "board": [
+            "Ks",
+            "Ts",
+            "9h"
+          ],
+          "action": "fold",
+          "amount": 0,
+          "equity": 0.1417,
+          "estimated_best_ev": 0.0,
+          "realized_chip_delta": 0,
+          "top_candidates": [
+            {
+              "action": "fold",
+              "amount": 0,
+              "ev": 0.0
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": -45.0
+            },
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": -56.25
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "9d",
+            "4c"
+          ],
+          "board": [
+            "3c",
+            "5s",
+            "6d"
+          ],
+          "action": "raise",
+          "amount": 900,
+          "equity": 0.3958,
+          "estimated_best_ev": 515.62,
+          "realized_chip_delta": -900,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 900,
+              "ev": 515.62
+            },
+            {
+              "action": "call",
+              "amount": 300,
+              "ev": 412.5
+            },
+            {
+              "action": "fold",
+              "amount": 0,
+              "ev": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "premium_preflop_vs_unknown",
+        "description": "Premium pair preflop with no bet to call.",
+        "board_cards": 0,
+        "pot": 300,
+        "to_call": 0,
+        "hero_stack": 10000,
+        "min_raise": 400,
+        "big_blind": 200,
+        "position": "cutoff",
+        "opponent_kind": "unknown",
+        "hero_filter": "premium_pair"
+      },
+      "trials": 120,
+      "engine_equity_simulations_per_decision": 120,
+      "seed": 20260626,
+      "action_frequencies": {
+        "all_in": 120
+      },
+      "average_estimated_best_ev": 5763.6562,
+      "average_estimated_equity": 0.8662,
+      "average_realized_chip_delta": 6010,
+      "positive_realized_rate": 0.8667,
+      "negative_realized_rate": 0.1333,
+      "neutral_realized_rate": 0.0,
+      "sample_decisions": [
+        {
+          "hero_cards": [
+            "Qc",
+            "Qh"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.8417,
+          "estimated_best_ev": 5389.38,
+          "realized_chip_delta": 10300,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 5389.38
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 469.37
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 252.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ac",
+            "As"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.9,
+          "estimated_best_ev": 6277.5,
+          "realized_chip_delta": 10300,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 6277.5
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 517.5
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 270.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ah",
+            "Ac"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.9,
+          "estimated_best_ev": 6277.5,
+          "realized_chip_delta": 10300,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 6277.5
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 517.5
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 270.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ks",
+            "Kd"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.8583,
+          "estimated_best_ev": 5643.12,
+          "realized_chip_delta": 10300,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 5643.12
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 483.12
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 257.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ah",
+            "Ac"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.9,
+          "estimated_best_ev": 6277.5,
+          "realized_chip_delta": -10000,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 6277.5
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 517.5
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 270.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Qh",
+            "Qd"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.825,
+          "estimated_best_ev": 5135.62,
+          "realized_chip_delta": 10300,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 5135.62
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 455.62
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 247.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Kh",
+            "Kc"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.8667,
+          "estimated_best_ev": 5770.0,
+          "realized_chip_delta": 10300,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 5770.0
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 490.0
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 260.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Qs",
+            "Qd"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 10000,
+          "equity": 0.8333,
+          "estimated_best_ev": 5262.5,
+          "realized_chip_delta": 300,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 10000,
+              "ev": 5262.5
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 462.5
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 250.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "suited_broadway_flop_draw",
+        "description": "Suited broadway hand on a random flop, facing a half-pot-ish bet.",
+        "board_cards": 3,
+        "pot": 1600,
+        "to_call": 700,
+        "hero_stack": 8500,
+        "min_raise": 1400,
+        "big_blind": 200,
+        "position": "button",
+        "opponent_kind": "nit",
+        "hero_filter": "suited_broadway"
+      },
+      "trials": 120,
+      "engine_equity_simulations_per_decision": 120,
+      "seed": 20260627,
+      "action_frequencies": {
+        "raise": 32,
+        "all_in": 88
+      },
+      "average_estimated_best_ev": 2529.6438,
+      "average_estimated_equity": 0.6432,
+      "average_realized_chip_delta": 1989.1667,
+      "positive_realized_rate": 0.8,
+      "negative_realized_rate": 0.2,
+      "neutral_realized_rate": 0.0,
+      "sample_decisions": [
+        {
+          "hero_cards": [
+            "As",
+            "Ks"
+          ],
+          "board": [
+            "4c",
+            "8c",
+            "9h"
+          ],
+          "action": "raise",
+          "amount": 2100,
+          "equity": 0.4875,
+          "estimated_best_ev": 1233.55,
+          "realized_chip_delta": -2100,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 1233.55
+            },
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 1166.35
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 762.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ac",
+            "Qc"
+          ],
+          "board": [
+            "Ks",
+            "Jc",
+            "Kc"
+          ],
+          "action": "all_in",
+          "amount": 8500,
+          "equity": 0.775,
+          "estimated_best_ev": 3412.3,
+          "realized_chip_delta": 10100,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 3412.3
+            },
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 1933.9
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 1625.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Qc",
+            "Tc"
+          ],
+          "board": [
+            "As",
+            "5d",
+            "Kc"
+          ],
+          "action": "all_in",
+          "amount": 8500,
+          "equity": 0.5458,
+          "estimated_best_ev": 1622.05,
+          "realized_chip_delta": 1600,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 1622.05
+            },
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 1375.65
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 937.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Td",
+            "Qd"
+          ],
+          "board": [
+            "8d",
+            "5c",
+            "7d"
+          ],
+          "action": "all_in",
+          "amount": 8500,
+          "equity": 0.5458,
+          "estimated_best_ev": 1622.05,
+          "realized_chip_delta": -8500,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 1622.05
+            },
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 1375.65
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 937.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ac",
+            "Qc"
+          ],
+          "board": [
+            "5d",
+            "6s",
+            "Ah"
+          ],
+          "action": "all_in",
+          "amount": 8500,
+          "equity": 0.8542,
+          "estimated_best_ev": 4030.75,
+          "realized_chip_delta": 10100,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 4030.75
+            },
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 2126.75
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 1862.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "As",
+            "Js"
+          ],
+          "board": [
+            "8d",
+            "Kd",
+            "9d"
+          ],
+          "action": "raise",
+          "amount": 2100,
+          "equity": 0.3875,
+          "estimated_best_ev": 989.95,
+          "realized_chip_delta": 1600,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 989.95
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 462.5
+            },
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 385.15
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Jd",
+            "Qd"
+          ],
+          "board": [
+            "4s",
+            "3d",
+            "8c"
+          ],
+          "action": "raise",
+          "amount": 2100,
+          "equity": 0.35,
+          "estimated_best_ev": 898.6,
+          "realized_chip_delta": 1600,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 898.6
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 350.0
+            },
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 92.2
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Jc",
+            "Qc"
+          ],
+          "board": [
+            "Qh",
+            "6h",
+            "Ad"
+          ],
+          "action": "all_in",
+          "amount": 8500,
+          "equity": 0.7292,
+          "estimated_best_ev": 3054.25,
+          "realized_chip_delta": -8500,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 8500,
+              "ev": 3054.25
+            },
+            {
+              "action": "raise",
+              "amount": 2100,
+              "ev": 1822.25
+            },
+            {
+              "action": "call",
+              "amount": 700,
+              "ev": 1487.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "short_stack_pressure",
+        "description": "Short stack preflop decision with fold equity available.",
+        "board_cards": 0,
+        "pot": 500,
+        "to_call": 200,
+        "hero_stack": 2200,
+        "min_raise": 400,
+        "big_blind": 200,
+        "position": "small_blind",
+        "opponent_kind": "nit",
+        "hero_filter": "any"
+      },
+      "trials": 120,
+      "engine_equity_simulations_per_decision": 120,
+      "seed": 20260628,
+      "action_frequencies": {
+        "raise": 54,
+        "all_in": 66
+      },
+      "average_estimated_best_ev": 482.5,
+      "average_estimated_equity": 0.5233,
+      "average_realized_chip_delta": 462.0833,
+      "positive_realized_rate": 0.7833,
+      "negative_realized_rate": 0.2167,
+      "neutral_realized_rate": 0.0,
+      "sample_decisions": [
+        {
+          "hero_cards": [
+            "9c",
+            "2h"
+          ],
+          "board": [],
+          "action": "raise",
+          "amount": 600,
+          "equity": 0.4042,
+          "estimated_best_ev": 326.57,
+          "realized_chip_delta": 500,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 326.57
+            },
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 197.78
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 163.75
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "As",
+            "3c"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 2200,
+          "equity": 0.5833,
+          "estimated_best_ev": 566.5,
+          "realized_chip_delta": 500,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 566.5
+            },
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 454.5
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 325.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "8h",
+            "Qs"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 2200,
+          "equity": 0.5333,
+          "estimated_best_ev": 463.6,
+          "realized_chip_delta": 2700,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 463.6
+            },
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 418.8
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 280.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "4s",
+            "Td"
+          ],
+          "board": [],
+          "action": "raise",
+          "amount": 600,
+          "equity": 0.4875,
+          "estimated_best_ev": 386.07,
+          "realized_chip_delta": -600,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 386.07
+            },
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 369.27
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 238.75
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "8s",
+            "Ah"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 2200,
+          "equity": 0.6542,
+          "estimated_best_ev": 712.28,
+          "realized_chip_delta": 2700,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 712.28
+            },
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 505.08
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 388.75
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Kd",
+            "Qd"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 2200,
+          "equity": 0.625,
+          "estimated_best_ev": 652.25,
+          "realized_chip_delta": 500,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 652.25
+            },
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 484.25
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 362.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "4h",
+            "3c"
+          ],
+          "board": [],
+          "action": "raise",
+          "amount": 600,
+          "equity": 0.3333,
+          "estimated_best_ev": 276.0,
+          "realized_chip_delta": -600,
+          "top_candidates": [
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 276.0
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 100.0
+            },
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 52.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Kh",
+            "7d"
+          ],
+          "board": [],
+          "action": "all_in",
+          "amount": 2200,
+          "equity": 0.5667,
+          "estimated_best_ev": 532.2,
+          "realized_chip_delta": 500,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 2200,
+              "ev": 532.2
+            },
+            {
+              "action": "raise",
+              "amount": 600,
+              "ev": 442.6
+            },
+            {
+              "action": "call",
+              "amount": 200,
+              "ev": 310.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "name": "calling_station_postflop",
+        "description": "Postflop spot against a calling-station profile.",
+        "board_cards": 3,
+        "pot": 1400,
+        "to_call": 0,
+        "hero_stack": 7600,
+        "min_raise": 400,
+        "big_blind": 200,
+        "position": "hijack",
+        "opponent_kind": "calling_station",
+        "hero_filter": "any"
+      },
+      "trials": 120,
+      "engine_equity_simulations_per_decision": 120,
+      "seed": 20260629,
+      "action_frequencies": {
+        "bet": 66,
+        "all_in": 54
+      },
+      "average_estimated_best_ev": 1952.7833,
+      "average_estimated_equity": 0.4989,
+      "average_realized_chip_delta": 2071.6667,
+      "positive_realized_rate": 0.575,
+      "negative_realized_rate": 0.425,
+      "neutral_realized_rate": 0.0,
+      "sample_decisions": [
+        {
+          "hero_cards": [
+            "6s",
+            "5h"
+          ],
+          "board": [
+            "Ah",
+            "2c",
+            "Qh"
+          ],
+          "action": "bet",
+          "amount": 400,
+          "equity": 0.2792,
+          "estimated_best_ev": 451.33,
+          "realized_chip_delta": -400,
+          "top_candidates": [
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 451.33
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 390.83
+            },
+            {
+              "action": "fold",
+              "amount": 0,
+              "ev": 0.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "5d",
+            "8c"
+          ],
+          "board": [
+            "9c",
+            "9s",
+            "Qs"
+          ],
+          "action": "bet",
+          "amount": 400,
+          "equity": 0.3083,
+          "estimated_best_ev": 502.67,
+          "realized_chip_delta": -400,
+          "top_candidates": [
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 502.67
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 431.67
+            },
+            {
+              "action": "fold",
+              "amount": 0,
+              "ev": 0.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ad",
+            "9d"
+          ],
+          "board": [
+            "Td",
+            "6d",
+            "Ts"
+          ],
+          "action": "all_in",
+          "amount": 7600,
+          "equity": 0.7417,
+          "estimated_best_ev": 4049.33,
+          "realized_chip_delta": -7600,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 7600,
+              "ev": 4049.33
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 1265.33
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 1038.33
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "7c",
+            "6d"
+          ],
+          "board": [
+            "Jh",
+            "6s",
+            "Qd"
+          ],
+          "action": "all_in",
+          "amount": 7600,
+          "equity": 0.5875,
+          "estimated_best_ev": 2002.0,
+          "realized_chip_delta": 9000,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 7600,
+              "ev": 2002.0
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 994.0
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 822.5
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Jc",
+            "4h"
+          ],
+          "board": [
+            "As",
+            "3d",
+            "2h"
+          ],
+          "action": "bet",
+          "amount": 400,
+          "equity": 0.4625,
+          "estimated_best_ev": 774.0,
+          "realized_chip_delta": 1800,
+          "top_candidates": [
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 774.0
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 647.5
+            },
+            {
+              "action": "all_in",
+              "amount": 7600,
+              "ev": 342.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "5s",
+            "7h"
+          ],
+          "board": [
+            "Ac",
+            "Kd",
+            "Jd"
+          ],
+          "action": "bet",
+          "amount": 400,
+          "equity": 0.2208,
+          "estimated_best_ev": 348.67,
+          "realized_chip_delta": -400,
+          "top_candidates": [
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 348.67
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 309.17
+            },
+            {
+              "action": "fold",
+              "amount": 0,
+              "ev": 0.0
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Qc",
+            "Qs"
+          ],
+          "board": [
+            "Jc",
+            "Ks",
+            "2h"
+          ],
+          "action": "all_in",
+          "amount": 7600,
+          "equity": 0.7708,
+          "estimated_best_ev": 4436.67,
+          "realized_chip_delta": 9000,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 7600,
+              "ev": 4436.67
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 1316.67
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 1079.17
+            }
+          ]
+        },
+        {
+          "hero_cards": [
+            "Ac",
+            "Kh"
+          ],
+          "board": [
+            "8d",
+            "Jd",
+            "Qc"
+          ],
+          "action": "all_in",
+          "amount": 7600,
+          "equity": 0.5667,
+          "estimated_best_ev": 1725.33,
+          "realized_chip_delta": 9000,
+          "top_candidates": [
+            {
+              "action": "all_in",
+              "amount": 7600,
+              "ev": 1725.33
+            },
+            {
+              "action": "bet",
+              "amount": 400,
+              "ev": 957.33
+            },
+            {
+              "action": "check",
+              "amount": 0,
+              "ev": 793.33
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+utg_open:
+  always: [AA, KK, QQ, AKs, AKo]
+  frequent: [JJ, TT, AQs]
+button_open:
+  always: [AA, KK, QQ, JJ, TT, AKs, AQs, AKo, KQs]
+  mixed: [99, 88, AJs, ATs, KJs, QJs, JTs, T9s, 98s, A5s]
+short_stack_push_10bb:
+  always: [AA, KK, QQ, JJ, TT, AKs, AQs, AKo]
+  mixed: [99, 88, 77, AJs, ATs, KQs, A5s, A4s]
+

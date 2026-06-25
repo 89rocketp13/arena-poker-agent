@@ -1,0 +1,11 @@
+[project]
+name = "arena-poker-agent"
+version = "0.1.0"
+description = "Explainable hybrid poker decision engine for tournament No-Limit Hold'em."
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+

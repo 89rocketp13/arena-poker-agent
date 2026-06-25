@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+arena-data/decision-calls.jsonl
+arena-data/hand-records.jsonl
+arena-data/learning-profile.json
+arena_strategy/reports/*.md
+

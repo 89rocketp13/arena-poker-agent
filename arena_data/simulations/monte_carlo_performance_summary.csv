@@ -1,0 +1,6 @@
+scenario,trials,average_estimated_best_ev,average_estimated_equity,average_realized_chip_delta,positive_realized_rate,negative_realized_rate,neutral_realized_rate,action_frequencies
+random_flop_single_raised_pot,120,1599.0312,0.4758,960,0.5667,0.4083,0.025,"{""all_in"": 52, ""fold"": 3, ""raise"": 65}"
+premium_preflop_vs_unknown,120,5763.6562,0.8662,6010,0.8667,0.1333,0.0,"{""all_in"": 120}"
+suited_broadway_flop_draw,120,2529.6438,0.6432,1989.1667,0.8,0.2,0.0,"{""all_in"": 88, ""raise"": 32}"
+short_stack_pressure,120,482.5,0.5233,462.0833,0.7833,0.2167,0.0,"{""all_in"": 66, ""raise"": 54}"
+calling_station_postflop,120,1952.7833,0.4989,2071.6667,0.575,0.425,0.0,"{""all_in"": 54, ""bet"": 66}"

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "name": "sample_ranges",
+      "path": "arena_data/preflop/sample_ranges.json",
+      "kind": "fixture",
+      "description": "Small deterministic range fixture for tests and early development."
+    },
+    {
+      "name": "exploit_rules",
+      "path": "arena_data/heuristics/exploit_rules.json",
+      "kind": "heuristic",
+      "description": "Population exploit configuration used by future strategy layers."
+    }
+  ]
+}
+
