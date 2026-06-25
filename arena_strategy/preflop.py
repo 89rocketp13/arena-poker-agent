@@ -69,6 +69,9 @@ def recommend_preflop(state: TableState) -> PreflopRecommendation | None:
     if _is_tiny_price(state):
         return _tiny_price_decision(hand, state)
 
+    if _is_non_heavy_price(state) and estimate_preflop_win_chance(state.hero_cards) >= 0.25:
+        return _small_equity_pressure(hand, state)
+
     if bb_stack <= 10:
         return _short_stack(hand, state, PUSH_10BB, "push_fold_10bb")
     if bb_stack <= 15:
@@ -85,15 +88,34 @@ def _is_tiny_price(state: TableState) -> bool:
     return state.to_call <= max(1, state.big_blind // 2)
 
 
+def _is_non_heavy_price(state: TableState) -> bool:
+    if state.big_blind <= 0:
+        return state.to_call == 0
+    return state.to_call <= state.big_blind
+
+
+def _small_equity_pressure(hand: str, state: TableState) -> PreflopRecommendation:
+    action_type = ActionType.BET if state.to_call == 0 else ActionType.RAISE
+    amount = _legal_min_plus_three(state)
+    chance = estimate_preflop_win_chance(state.hero_cards)
+    return PreflopRecommendation(
+        Action(action_type, amount),
+        hand,
+        "small_equity_pressure_25pct",
+        "low",
+        f"{hand} has estimated preflop win chance {chance:.2f}; apply legal-minimum-plus-3 pressure when price is not heavy.",
+    )
+
+
 def _tiny_price_decision(hand: str, state: TableState) -> PreflopRecommendation:
-    if _is_late(state.position.lower()) and hand in LATE_OPEN | {"KTo", "K9o", "QTo", "JTo", "A9o", "A8o"}:
-        amount = min(state.hero_stack, max(state.to_call + 3, state.min_raise))
+    if estimate_preflop_win_chance(state.hero_cards) >= 0.25:
+        amount = _legal_min_plus_three(state)
         return PreflopRecommendation(
             Action(ActionType.RAISE, amount),
             hand,
-            "tiny_price_button_pressure",
+            "tiny_price_25pct_pressure",
             "medium",
-            f"{hand} is strong enough to attack a tiny preflop price in position.",
+            f"{hand} has at least 25% estimated preflop win chance; attack a tiny price.",
         )
     return PreflopRecommendation(
         Action(ActionType.CALL, min(state.to_call, state.hero_stack)),
@@ -102,6 +124,35 @@ def _tiny_price_decision(hand: str, state: TableState) -> PreflopRecommendation:
         "high",
         f"Calling {state.to_call} is a tiny price; do not fold when completion is cheap.",
     )
+
+
+def _legal_min_plus_three(state: TableState) -> int:
+    if state.to_call > 0:
+        minimum_total = state.to_call + max(state.min_raise, state.big_blind)
+    else:
+        minimum_total = max(state.min_raise, state.big_blind)
+    return min(state.hero_stack, minimum_total + 3)
+
+
+def estimate_preflop_win_chance(cards: list[Card]) -> float:
+    high, low = sorted((card.value for card in cards), reverse=True)
+    suited = cards[0].suit == cards[1].suit
+    pair = high == low
+    gap = high - low
+    if pair:
+        return min(0.85, 0.50 + (high - 2) * 0.025)
+    chance = 0.22 + high * 0.018 + low * 0.010
+    if suited:
+        chance += 0.035
+    if gap == 1:
+        chance += 0.025
+    elif gap == 2:
+        chance += 0.015
+    elif gap >= 5:
+        chance -= 0.035
+    if high == 14:
+        chance += 0.025
+    return max(0.18, min(0.72, chance))
 
 
 def _short_stack(hand: str, state: TableState, push_range: set[str], chart: str) -> PreflopRecommendation:

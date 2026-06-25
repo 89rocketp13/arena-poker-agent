@@ -68,7 +68,7 @@ class DecisionEngine:
         )
 
         preflop = recommend_preflop(state)
-        if preflop is not None and preflop.action in actions:
+        if preflop is not None and self._preflop_action_is_allowed(preflop.action, state, actions):
             candidates = [
                 CandidateAction(
                     action=preflop.action,
@@ -105,6 +105,22 @@ class DecisionEngine:
                 llm_review_used = True
 
         return Decision(action=chosen, candidates=candidates, context=context, llm_review_used=llm_review_used)
+
+    def _preflop_action_is_allowed(self, action: Action, state: TableState, actions: list[Action]) -> bool:
+        if action in actions:
+            return True
+        if action.amount < 0 or action.amount > state.hero_stack:
+            return False
+        legal_types = {legal.action_type for legal in actions}
+        if action.action_type not in legal_types:
+            return False
+        if action.action_type == ActionType.BET:
+            return state.to_call == 0 and action.amount >= max(state.big_blind, state.min_raise)
+        if action.action_type == ActionType.RAISE:
+            return state.to_call > 0 and action.amount >= state.to_call + state.min_raise
+        if action.action_type == ActionType.CALL:
+            return action.amount == min(state.to_call, state.hero_stack)
+        return action.action_type in {ActionType.FOLD, ActionType.CHECK} and action.amount == 0
 
     def _score_action(
         self,
