@@ -13,6 +13,8 @@
 - Every strategy-engine call should leave a line in `arena-data/decision-calls.jsonl`.
 - Rebuild learning with `python -m arena_strategy.learning` after adding completed hand records.
 - Check integration with `python scripts\check_integration.py`.
+- Preflop uses conservative GTO-inspired chart gates. Do not override them loose during live action without a strong reason.
+- Postflop favors legal, explainable, lower-variance lines unless equity and fold equity clearly justify aggression.
 
 ## Current Known Leak
 

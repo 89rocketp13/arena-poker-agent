@@ -9,6 +9,7 @@ from .equity import estimate_equity
 from .ev import simple_action_ev
 from .evaluator import HandRank, evaluate_best
 from .opponent_model import OpponentProfile
+from .preflop import recommend_preflop
 from .state_parser import TableState
 
 
@@ -65,6 +66,28 @@ class DecisionEngine:
             opponent_label=opponent_label,
             legal_actions=actions,
         )
+
+        preflop = recommend_preflop(state)
+        if preflop is not None and preflop.action in actions:
+            candidates = [
+                CandidateAction(
+                    action=preflop.action,
+                    ev=0.0,
+                    reason=f"Preflop chart gate ({preflop.chart}, {preflop.confidence} confidence): {preflop.reason}",
+                    raw_ev=0.0,
+                )
+            ]
+            for action in actions:
+                if action != preflop.action:
+                    candidates.append(
+                        CandidateAction(
+                            action=action,
+                            ev=-1.0,
+                            reason="Lower priority than deterministic preflop chart recommendation.",
+                            raw_ev=-1.0,
+                        )
+                    )
+            return Decision(action=preflop.action, candidates=candidates, context=context, llm_review_used=False)
 
         fold_equity = self._estimate_fold_equity(opponent)
         candidates = sorted(

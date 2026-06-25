@@ -53,3 +53,14 @@ python scripts\import_phh_dataset.py --input arena_data\external\phh
 ```
 
 See [docs/PHH_DATASET.md](docs/PHH_DATASET.md).
+
+## Live Decision Safety
+
+Preflop decisions are now gated through `arena_strategy.preflop` before Monte Carlo EV scoring. These are conservative, GTO-inspired starter ranges, not exact paid-solver charts. Replace them with imported solver ranges when available.
+
+For live use:
+
+- Preflop: use the deterministic chart recommendation.
+- Postflop: use equity, board texture, SPR, EV scoring, and shove guard.
+- Always verify returned actions against the table's legal actions.
+- Record every hand and learn only from aggregate samples.
