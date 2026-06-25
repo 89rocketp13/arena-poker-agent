@@ -40,9 +40,25 @@ def test_facing_raise_folds_trash() -> None:
     assert recommendation.action.action_type == ActionType.FOLD
 
 
+def test_tiny_button_price_with_k9o_never_folds() -> None:
+    state = TableState(
+        hero_cards=parse_cards("Ks 9h"),
+        board=[],
+        pot=3,
+        to_call=1,
+        hero_stack=986,
+        min_raise=4,
+        big_blind=2,
+        position="button",
+        opponents_in_hand=1,
+    )
+    recommendation = recommend_preflop(state)
+    assert recommendation is not None
+    assert recommendation.action.action_type in {ActionType.CALL, ActionType.RAISE}
+
+
 def test_decision_engine_uses_preflop_gate_instead_of_shoving() -> None:
     state = make_state("Ah Kh", "button")
     decision = DecisionEngine(simulations=20, seed=1).decide(state)
     assert decision.action.action_type == ActionType.BET
     assert "Preflop chart gate" in decision.candidates[0].reason
-

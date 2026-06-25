@@ -66,6 +66,9 @@ def recommend_preflop(state: TableState) -> PreflopRecommendation | None:
     hand = canonical_hand(state.hero_cards[0], state.hero_cards[1])
     bb_stack = state.hero_stack / state.big_blind if state.big_blind else 999.0
 
+    if _is_tiny_price(state):
+        return _tiny_price_decision(hand, state)
+
     if bb_stack <= 10:
         return _short_stack(hand, state, PUSH_10BB, "push_fold_10bb")
     if bb_stack <= 15:
@@ -74,6 +77,31 @@ def recommend_preflop(state: TableState) -> PreflopRecommendation | None:
     if state.to_call > 0:
         return _facing_raise(hand, state)
     return _open_decision(hand, state)
+
+
+def _is_tiny_price(state: TableState) -> bool:
+    if state.to_call <= 0 or state.big_blind <= 0:
+        return False
+    return state.to_call <= max(1, state.big_blind // 2)
+
+
+def _tiny_price_decision(hand: str, state: TableState) -> PreflopRecommendation:
+    if _is_late(state.position.lower()) and hand in LATE_OPEN | {"KTo", "K9o", "QTo", "JTo", "A9o", "A8o"}:
+        amount = min(state.hero_stack, max(state.to_call + 3, state.min_raise))
+        return PreflopRecommendation(
+            Action(ActionType.RAISE, amount),
+            hand,
+            "tiny_price_button_pressure",
+            "medium",
+            f"{hand} is strong enough to attack a tiny preflop price in position.",
+        )
+    return PreflopRecommendation(
+        Action(ActionType.CALL, min(state.to_call, state.hero_stack)),
+        hand,
+        "tiny_price_complete",
+        "high",
+        f"Calling {state.to_call} is a tiny price; do not fold when completion is cheap.",
+    )
 
 
 def _short_stack(hand: str, state: TableState, push_range: set[str], chart: str) -> PreflopRecommendation:
@@ -133,4 +161,3 @@ def _is_late(position: str) -> bool:
 
 def _is_blind(position: str) -> bool:
     return position in BLIND_POSITIONS
-
