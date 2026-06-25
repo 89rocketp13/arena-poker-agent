@@ -1,5 +1,6 @@
 from arena_strategy.betting import ActionType
 from arena_strategy.cards import parse_cards
+from arena_strategy.decision import decide_action_dict
 from arena_strategy.decision_engine import DecisionEngine
 from arena_strategy.preflop import recommend_preflop
 from arena_strategy.state_parser import TableState
@@ -55,6 +56,30 @@ def test_tiny_button_price_with_k9o_never_folds() -> None:
     recommendation = recommend_preflop(state)
     assert recommendation is not None
     assert recommendation.action.action_type in {ActionType.CALL, ActionType.RAISE}
+
+
+def test_live_facade_never_folds_tiny_preflop_price() -> None:
+    response = decide_action_dict(
+        {
+            "source": "tiny-price-safety",
+            "hand_id": "ato-tiny",
+            "table_id": "test",
+            "hero_cards": ["Th", "Ad"],
+            "board": [],
+            "pot": 3,
+            "to_call": 1,
+            "hero_stack": 987,
+            "min_raise": 4,
+            "big_blind": 2,
+            "position": "button",
+            "opponents_in_hand": 1,
+        },
+        simulations=10,
+        seed=1,
+        use_learning=False,
+        call_log_path="arena-data/test-decision-calls.jsonl",
+    )
+    assert response["action"] in {"call", "raise", "bet"}
 
 
 def test_decision_engine_uses_preflop_gate_instead_of_shoving() -> None:

@@ -39,6 +39,7 @@ def decide_action(
     assert_legal_response(decision.action, state.betting_state.stack)
     learning_profile = LearningStore().load() if use_learning else None
     chosen_action = apply_learning_guard(decision.action, decision.candidates, learning_profile)
+    chosen_action = apply_live_safety_guard(chosen_action, state)
     assert_legal_response(chosen_action, state.betting_state.stack)
     top = next((candidate for candidate in decision.candidates if candidate.action == chosen_action), decision.candidates[0])
     message = f"{chosen_action.action_type.value} {chosen_action.amount}".strip()
@@ -89,6 +90,20 @@ def apply_learning_guard(action: Action, candidates: list, learning_profile: obj
     for candidate in candidates:
         if candidate.action.action_type != ActionType.ALL_IN:
             return candidate.action
+    return action
+
+
+def apply_live_safety_guard(action: Action, state: object) -> Action:
+    board = getattr(state, "board", [])
+    to_call = getattr(state, "to_call", 0)
+    big_blind = getattr(state, "big_blind", 0)
+    stack = getattr(state, "hero_stack", 0)
+    if board or action.action_type != ActionType.FOLD:
+        return action
+    if to_call <= 0:
+        return Action(ActionType.CHECK)
+    if big_blind > 0 and to_call <= max(1, big_blind // 2):
+        return Action(ActionType.CALL, min(to_call, stack))
     return action
 
 
