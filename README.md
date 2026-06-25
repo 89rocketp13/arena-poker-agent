@@ -43,3 +43,13 @@ If Hermes/Claude is calling the strategy facade, `arena-data/decision-calls.json
 ```powershell
 python -m arena_strategy.learning
 ```
+
+## PHH Dataset Import
+
+Place University of Toronto CPRG PHH files under `arena_data/external/phh/`, then run:
+
+```powershell
+python scripts\import_phh_dataset.py --input arena_data\external\phh
+```
+
+See [docs/PHH_DATASET.md](docs/PHH_DATASET.md).

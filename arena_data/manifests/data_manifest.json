@@ -12,7 +12,18 @@
       "path": "arena_data/heuristics/exploit_rules.json",
       "kind": "heuristic",
       "description": "Population exploit configuration used by future strategy layers."
+    },
+    {
+      "name": "phh_external",
+      "path": "arena_data/external/phh",
+      "kind": "external_dataset_placeholder",
+      "description": "Local-only University of Toronto CPRG PHH files. Raw dataset files are gitignored."
+    },
+    {
+      "name": "phh_population_profile",
+      "path": "arena_data/derived/population_profile.json",
+      "kind": "derived",
+      "description": "Population tendencies derived from imported PHH records."
     }
   ]
 }
-
